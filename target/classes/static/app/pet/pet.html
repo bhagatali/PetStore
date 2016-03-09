@@ -1,0 +1,12 @@
+
+<div class="row pet">
+    <div ng-repeat="petData in petStoreData">
+        <div class="col-md-4">
+            <h3>{{petData.petName}}</h3>
+           	<img ng-src="img/{{petData.photoUrl[0]}}">
+            <h4>{{petData.price | currency:'C$'}}</h4>
+            <h4>{{petData.status}}</h4>
+            <a class="btn btn-primary btn-block" ng-disabled="petData.status=='Sold'" href="#/pet/{{petData.id}}">Details</a>
+        </div>
+    </div>    
+</div>

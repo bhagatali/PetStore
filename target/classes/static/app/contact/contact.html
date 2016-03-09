@@ -1,0 +1,10 @@
+<h2>Contacts</h2>
+  <p>Please email us at <a href="mailto:bhagat.ali@gmail.com">bhagat.ali@gmail.com</a></p>
+  <hr>
+  <h3>Locations</h3>
+  <div ng-repeat="location in locations">
+      <ul class="list-unstyled">
+          <li> {{location.name}}</li>
+          <p> {{location.street}}, {{location.city}}, {{location.state}},  {{location.zip}}</p>
+      </ul>
+  </div>  

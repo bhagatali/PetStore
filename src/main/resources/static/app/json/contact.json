@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "name":"Toronto Location",
+        "street":"4 Forest Laneway",
+        "city":"Toronto",
+        "state":"ON",
+        "zip":"T2N 5X8"
+    },
+    {
+        "id":2,
+        "name":"Markham Location",
+        "street":"4 Jungle Laneway",
+        "city":"Markham",
+        "state":"ON",
+        "zip":"M2N 5X8"
+    },
+    {
+        "id":3,
+        "name":"Kipling Location",
+        "street":"4 Kipling Laneway",
+        "city":"Kipling",
+        "state":"ON",
+        "zip":"K2N 5X8"
+    }    
+]
