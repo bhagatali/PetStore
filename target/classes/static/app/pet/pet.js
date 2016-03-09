@@ -25,9 +25,11 @@ angular.module('myApp.pet',['ngRoute'])
                                     '$filter',
                                     function($scope,$http,$routeParams,$filter){
     var petId = $routeParams.petId;
-    $http.get('http://localhost:8080/pet/').success(function(data){    	
-        $scope.pet = $filter('filter')(data,{id:petId})[0];
-        $scope.mainImage = $scope.pet.photoUrl[0];
+    var URL = "http://localhost:8080/pet/" + petId;
+    $http.get(URL).success(function(data){    	
+        //$scope.pet = $filter('filter')(data,{id:petId})[0];
+    	$scope.pet = data;
+    	$scope.mainImage = $scope.pet.photoUrl[0];
         $scope.setImage = function(image){
             $scope.mainImage = image;
         }

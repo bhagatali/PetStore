@@ -10,5 +10,5 @@ angular.module('myApp.about', ['ngRoute'])
 }])
 
 .controller('AboutController', [function() {
-    console.log('This is view1');
+    
 }]);
