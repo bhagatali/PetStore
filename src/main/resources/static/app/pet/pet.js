@@ -14,17 +14,15 @@ angular.module('myApp.pet',['ngRoute'])
     
     
 }])
-.controller('PetController',['$scope','$filter','$http',function($scope,$filter,$http){
+.controller('PetController',['$scope','$filter','$http','$location',function($scope,$filter,$http,$location){
     $http.get('http://localhost:8080/pet/').success(function(data){
         $scope.petStoreData = data;
     });    
     
     $scope.deletePet=function(petId){
-    	console.log(petId);
     	var URL = "http://localhost:8080/pet/" + petId;
     	$http.delete(URL).success(function(){
-    		console.log('Pet Deleted');
-    		//$window.location.reload();
+    		$location.path('/pet/');
     	});
     }
 }])
