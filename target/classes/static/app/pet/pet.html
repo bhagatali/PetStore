@@ -6,7 +6,9 @@
            	<img ng-src="img/{{petData.photoUrl[0]}}">
             <h4>{{petData.price | currency:'C$'}}</h4>
             <h4>{{petData.status}}</h4>
-            <a class="btn btn-primary btn-block" ng-disabled="petData.status=='Sold'" href="#/pet/{{petData.id}}">Details</a>
+           	<a class="btn btn-primary btn-block" ng-disabled="petData.status=='Sold'" href="#/pet/{{petData.id}}">Details</a>
+			<br>
+            <a class="btn btn-danger" href="#"><i class="fa fa-trash-o fa-lg"></i> Delete</a>
         </div>
     </div>    
 </div>
