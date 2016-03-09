@@ -18,6 +18,15 @@ angular.module('myApp.pet',['ngRoute'])
     $http.get('http://localhost:8080/pet/').success(function(data){
         $scope.petStoreData = data;
     });    
+    
+    $scope.deletePet=function(petId){
+    	console.log(petId);
+    	var URL = "http://localhost:8080/pet/" + petId;
+    	$http.delete(URL).success(function(){
+    		console.log('Pet Deleted');
+    		//$window.location.reload();
+    	});
+    }
 }])
 .controller('PetDetailsController',['$scope',
                                     '$http',
