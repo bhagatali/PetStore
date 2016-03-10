@@ -11,7 +11,7 @@
 			    </div>
 			    <div class="col-sm-6">
 			      <label>Status</label>
-				  <select class="col-sm-12" name="selectStatus" id="selectStatus" ng-model="status" required>
+				  <select class="col-sm-12" name="selectStatus" id="selectStatus" ng-model="status">
 				      <option value="">---Please select---</option> 
 				      <option value="Sold">Sold</option> 
 				      <option value="Pending">Pending</option>
@@ -49,11 +49,11 @@
 	  		<div class="row">
 			    <div class="col-sm-6">
 			      <label>Tags</label>
-			      <input type="text" class="col-sm-12" ng-model="tags" placeholder="Enter Tags - Comma Seperated Please" required />
+			      <input type="text" class="col-sm-12" ng-model="tags" placeholder="Enter Tags - Comma Seperated Please"/>
 			    </div>
 			    <div class="col-sm-6">
 			      <label>Category</label>
-				  <select class="col-sm-12" name="selectCategories" id="selectCategories" ng-model="categories" required multiple>
+				  <select class="col-sm-12" name="selectCategories" id="selectCategories" ng-model="categories" multiple>
 				      <option value="Canine">Canine</option> 
 				      <option value="Feline">Feline</option>
 				      <option value="Reptile">Reptile</option>

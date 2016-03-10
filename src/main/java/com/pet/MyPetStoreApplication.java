@@ -80,9 +80,9 @@ public class MyPetStoreApplication {
 			tagRepository.save(stateTag);	
 			
 			List<String> dogPhotos = new ArrayList<String>();
-			dogPhotos.add("dog.jpg");
-			dogPhotos.add("dog_1.jpg");
-			dogPhotos.add("dog_2.jpg");
+			dogPhotos.add("dog");
+			dogPhotos.add("dog_1");
+			dogPhotos.add("dog_2");
 			
 			Pet dog = new Pet();
 			dog.setId(counterService.getNextSequence("pet"));	
@@ -94,10 +94,10 @@ public class MyPetStoreApplication {
 			dog.setTags(listTag);
 
 			List<String> catPhotos = new ArrayList<String>();
-			catPhotos.add("cat.jpg");
-			catPhotos.add("cat_1.jpg");
-			catPhotos.add("cat_2.jpg");
-			catPhotos.add("cat_3.jpg");
+			catPhotos.add("cat");
+			catPhotos.add("cat_1");
+			catPhotos.add("cat_2");
+			catPhotos.add("cat_3");
 			
 			Pet cat = new Pet();
 			cat.setId(counterService.getNextSequence("pet"));	
@@ -109,10 +109,10 @@ public class MyPetStoreApplication {
 			cat.setTags(listTag);
 
 			List<String> lionPhotos = new ArrayList<String>();
-			lionPhotos.add("lion.jpg");
-			lionPhotos.add("lion_1.jpg");
-			lionPhotos.add("lion_2.jpg");
-			lionPhotos.add("lion_3.jpg");
+			lionPhotos.add("lion");
+			lionPhotos.add("lion_1");
+			lionPhotos.add("lion_2");
+			lionPhotos.add("lion_3");
 			
 			Pet lion = new Pet();
 			lion.setId(counterService.getNextSequence("pet"));	

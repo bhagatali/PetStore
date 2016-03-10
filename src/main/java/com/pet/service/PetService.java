@@ -1,16 +1,19 @@
 package com.pet.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pet.domain.Category;
 import com.pet.domain.Pet;
+import com.pet.domain.Tag;
 import com.pet.repository.CategoryRepository;
 import com.pet.repository.PetRepository;
 import com.pet.repository.TagRepository;
 
 @Service
-@SuppressWarnings("unused")
 public class PetService {
 
 	private PetRepository petRepository;
@@ -31,10 +34,35 @@ public class PetService {
 	}
 	
 	public Pet create(Pet pet){
-		System.out.println("Value of pet Id Before: " + pet.getId());
-		System.out.println("Value for pet Id: " + counterService.getNextSequence("pet"));
+		List<Category> userListCategory = pet.getCategories();
+		List<Category> saveListCategory = new ArrayList<Category>();
+		
+		if(userListCategory!=null){
+			for(Category category:userListCategory){
+				Category petCat = new Category();
+				petCat.setId(counterService.getNextSequence("category"));
+				petCat.setCategoryName(category.getCategoryName());
+				categoryRepository.save(petCat);
+				saveListCategory.add(petCat);
+			}
+			pet.setCategories(saveListCategory);
+		}
+		
+		List<Tag> userListTags = pet.getTags();
+		List<Tag> saveListTags = new ArrayList<Tag>();
+		
+		if(userListTags!=null){
+			for(Tag tag:userListTags){
+				Tag petTag = new Tag();
+				petTag.setId(counterService.getNextSequence("tag"));
+				petTag.setTagName(tag.getTagName());
+				tagRepository.save(petTag);
+				saveListTags.add(petTag);
+			}
+			pet.setTags(saveListTags);
+		}		
+		
 		pet.setId(counterService.getNextSequence("pet"));
-		System.out.println("Value of pet Id After: " + pet.getId());
 		return petRepository.save(pet);
 	}
 	
