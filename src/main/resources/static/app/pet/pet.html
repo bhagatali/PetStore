@@ -1,13 +1,13 @@
  <div class="row" ng-controller="PetController">   
- <div class="col-md-12">
-    <form ng-submit="submitAddPetForm()">
+ <div class="col-md-10">
+    <form ng-submit="submitAddPetForm()" ng-show="addFormShowFlag">
   		<h3>Add Pet</h3>
   		<!-- Add Form -->
   		<div class="container-fluid">
 	  		<div class="row">
 			    <div class="col-sm-6">
 			      <label>Name</label>
-			      <input type="text" class="col-sm-12" ng-model="name" placeholder="Contact Name" required />
+			      <input type="text" class="col-sm-12" ng-model="name" placeholder="Name your Pet" required />
 			    </div>
 			    <div class="col-sm-6">
 			      <label>Status</label>
@@ -19,6 +19,7 @@
 				  </select><br>
 			    </div>
   		    </div>
+  		    <br>
 	  		<div class="row">
 			    <div class="col-sm-6">
 			      <label>Price</label>
@@ -44,6 +45,7 @@
 				  </select><br>
 			    </div>
 			</div>	
+			<br>
 	  		<div class="row">
 			    <div class="col-sm-6">
 			      <label>Tags</label>
@@ -63,11 +65,15 @@
 	        <div class="row">
 	            <div class="col-sm-12" align="center">
 	                <input type="submit" class="btn btn-primary" value="Add Pet">
-	                <input type="button" class="btn btn-primary" value="Cancel">	                
+	                <input type="button" class="btn btn-primary" ng-click="cancelAdd()" value="Cancel">	                
 	            </div>
 	        </div>					
 		</div>
-	</form>
+	  </form>
+	</div>
+	<div class="col-md-2" align="right">
+	    <a class="btn btn-primary" ng-click="showAddPetForm()" ng-hide="addFormShowFlag"><i class="fa fa-plus-circle"></i> New Pet</a>
+	</div>	
 	
 	<div class="row pet">
 	    <div ng-repeat="petData in petStoreData">
@@ -83,4 +89,3 @@
 	    </div>    
 	</div>
 </div>	
-</div>

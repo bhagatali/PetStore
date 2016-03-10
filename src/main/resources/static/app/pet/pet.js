@@ -28,8 +28,14 @@ angular.module('myApp.pet',['ngRoute'])
 
     $scope.showAddPetForm = function(){
         clearFields();    
-        $scope.addFormShowFlag = true;        
+        console.log('Before 1'+ $scope.addFormShowFlag);
+        $scope.addFormShowFlag = true;      
+        console.log('Before 2' + $scope.addFormShowFlag);  
       };
+
+    $scope.cancelAdd = function(){
+        $scope.addFormShowFlag = false; 
+    };      
       
     $scope.submitAddPetForm = function(){
     	//Convert String to Array
