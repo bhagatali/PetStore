@@ -29,8 +29,13 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="#/pet"><i class="fa fa-home"></i> Home</a></li>
             <li><a href="#/about"><i class="fa fa-users"></i> About</a></li>
-            <li><a href="#/contact"><i class="fa fa-envelope-o"></i> Contact</a></li>
+            <li><a href="#/contact"><i class="fa fa-envelope-o"></i> Contact Us</a></li>
           </ul>
+		  <ul class="nav navbar-nav navbar-right" ng-controller="PetController">
+            <li><a href="" ng-click="showAddPetForm()" ng-hide="addFormShowFlag"><i class="fa fa-plus-circle"></i> New Pet</a></li>
+		    <li><a href="#"><i class="fa fa-user"></i> Sign Up</a></li>
+		    <li><a href="#"><i class="fa fa-sign-in"></i> Login</a></li>
+		  </ul>          
         </div>          
       </div>
     </nav>

@@ -14,7 +14,7 @@ angular.module('myApp.pet',['ngRoute'])
     
     
 }])
-.controller('PetController',['$scope','$filter','$http','$location',function($scope,$filter,$http,$location){
+.controller('PetController',['$scope','$http','$location',function($scope,$http,$location){
     $http.get('http://localhost:8080/pet/').success(function(data){
         $scope.petStoreData = data;
     });    
@@ -24,7 +24,44 @@ angular.module('myApp.pet',['ngRoute'])
     	$http.delete(URL).success(function(){
     		$location.path('/pet/');
     	});
-    }
+    };
+
+    $scope.showAddPetForm = function(){
+        clearFields();    
+        $scope.addFormShowFlag = true;        
+      };
+      
+    $scope.submitAddPetForm = function(){
+    	var petObject={
+    			petName:$scope.name || null,
+    			status:$scope.status || null,
+    			photoUrl:$scope.image || null,
+    			price:$scope.price || null
+    	}
+    	console.log('petObject');
+        var res = $http.post('http://localhost:8080/pet/',petObject);
+    	
+    	res.success(function(data, status, headers, config){
+    		$scope.message = data;
+		});
+    	
+		res.error(function(data, status, headers, config) {
+			alert( "failure message: " + JSON.stringify({data: data}));
+		});
+//            var id = ref.key();
+//            console.log('Added record with id: ' + id);
+            
+        clearFields();
+            
+        $scope.addFormShowFlag = false;        
+    };
+    
+    var clearFields = function(){
+        $scope.name = "";
+        $scope.status = "";
+        $scope.image = "";
+        $scope.price = "";
+    };      
 }])
 .controller('PetDetailsController',['$scope',
                                     '$http',
@@ -40,6 +77,5 @@ angular.module('myApp.pet',['ngRoute'])
         $scope.setImage = function(image){
             $scope.mainImage = image;
         }
-    })
-                                             
-}])
+    })  
+}]);

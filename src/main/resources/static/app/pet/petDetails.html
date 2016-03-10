@@ -3,12 +3,12 @@
     <br>
     <br>
     <div class="col-md-4">
-        <img class="img-full" src="img/{{mainImage}}">
+        <img class="img-full" src="img/{{mainImage}}.jpg">
         <hr>
         <div class="row">
             <div ng-repeat="image in pet.photoUrl | limitTo:4">
                 <div class="col-md-3">
-                    <img class="img-thumbnail" ng-src='img/{{image}}' ng-click="setImage(image)">
+                    <img class="img-thumbnail" ng-src='img/{{image}}.jpg' ng-click="setImage(image)">
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
 			</div>
 		</div>        	
         <hr>	 
-        <h4>{{pet.price | currency:'C$'}}</h4>
+        <h4><i class="fa fa-cart-plus fa-2x"></i> {{pet.price | currency:'C$'}}</h4>
 	<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
     	<!-- Specifies Buy Now Button -->
         <input type="hidden" name="cmd" value="_xclick">
