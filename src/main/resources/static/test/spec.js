@@ -1,7 +1,9 @@
 describe('Controller',function(){
     beforeEach(module('myApp.pet'));//load module
     
-    var HelloWorldController,
+    /*
+     * 
+     *var HelloWorldController,
         scope;
 
     beforeEach(inject(function ($rootScope, $controller) {
@@ -11,5 +13,14 @@ describe('Controller',function(){
     
     it('says hello world!', function () {
         expect(scope.greeting).toEqual("Hello world!");
-    });
+    });*/
+    
+    var $controller;
+	beforeEach(inject(function($injector) {
+		$controller = $injector.get('$controller');
+	}));
+
+	it("loads a controller", function() {
+		var controller = $controller('HelloWorldController')
+	});
 });

@@ -51,6 +51,12 @@
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpcore</artifactId>
 		</dependency>	
+		<dependency>
+			  <groupId>org.webjars</groupId>
+			  <artifactId>jasmine</artifactId>
+			  <version>2.0.0</version>
+			  <scope>test</scope>
+		</dependency>		
 	</dependencies>
 	
 	<build>
@@ -59,6 +65,41 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<!--plugin>
+			  <groupId>com.github.searls</groupId>
+			  <artifactId>jasmine-maven-plugin</artifactId>
+			  <version>2.0-alpha-01</version>
+			  <configuration>
+			    <additionalContexts>
+			      <context>
+			        <contextRoot>/app</contextRoot>
+			        <directory>${project.basedir}/src/main/resources/static</directory>
+			      </context>
+			    </additionalContexts>
+			    <preloadSources>
+			      <source>/jquery/dist/jquery.js</source>
+			      <source>/bootstrap/dist/js/bootstrap.js</source>
+			      <source>/angular-mocks.js</source>
+			    </preloadSources>
+			    <jsSrcDir>${project.basedir}/src/main/resources/static/app/bower_components</jsSrcDir>
+			    <jsTestSrcDir>${project.basedir}/src/test/resources/static/js</jsTestSrcDir>
+			    <webDriverClassName>org.openqa.selenium.phantomjs.PhantomJSDriver</webDriverClassName>
+			  </configuration>
+			  <dependencies>
+			    <dependency>
+			      <groupId>org.webjars</groupId>
+			      <artifactId>angularjs</artifactId>
+			      <version>1.3.8</version>
+			    </dependency>
+			  </dependencies>			  			  
+			  <executions>
+			    <execution>
+			      <goals>
+			        <goal>test</goal>
+			      </goals>
+			    </execution>
+			  </executions>
+			</plugin-->            			
 		</plugins>
 	</build>
 	
